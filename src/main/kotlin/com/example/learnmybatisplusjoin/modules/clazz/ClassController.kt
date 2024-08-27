@@ -40,8 +40,7 @@ class ClassController {
                             .result(UserIdCard::cardNumber)
                     }
                     // 查询 book列表
-                    .collection(User::books)
-                    { tBook ->
+                    .collection(User::books) { tBook ->
                         // 只查询book指定字段
                         tBook
                             .id(Book::id)
