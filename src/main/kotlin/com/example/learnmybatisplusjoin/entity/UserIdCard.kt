@@ -1,18 +1,15 @@
 package com.example.learnmybatisplusjoin.entity
 
-import jakarta.persistence.*
-import org.hibernate.annotations.IdGeneratorType
+import com.fasterxml.jackson.annotation.JsonInclude
 import java.time.LocalDateTime
 
-
-//@Entity
 data class UserIdCard(
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
+    @JsonInclude(value = JsonInclude.Include.NON_DEFAULT)
     val uid: Long = 0,
 
+    @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
     val cardNumber: String = "",
 
     val createdAt: LocalDateTime? = null,
@@ -20,8 +17,4 @@ data class UserIdCard(
     val updatedAt: LocalDateTime? = null,
 
     val deletedAt: LocalDateTime? = null,
-
-//    @OneToOne(cascade = [CascadeType.ALL])
-//    @JoinColumn(name = "uid", referencedColumnName = "id")
-//    val user:User? = null
 )

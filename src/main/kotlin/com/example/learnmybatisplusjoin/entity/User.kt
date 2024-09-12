@@ -1,6 +1,8 @@
 package com.example.learnmybatisplusjoin.entity
 
 import com.baomidou.mybatisplus.annotation.TableField
+import com.example.learnmybatisplusjoin.common.JsonValueNegativeFilter
+import com.fasterxml.jackson.annotation.JsonInclude
 import java.time.LocalDateTime
 
 data class User(
@@ -23,9 +25,11 @@ data class User(
 
     val deletedAt: LocalDateTime? = null,
 
-    val age: Long = 0,
+    @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = JsonValueNegativeFilter::class)
+    val age: Long = -1,
 
-    val classId: Long = 0,
+    @JsonInclude(value = JsonInclude.Include.CUSTOM, valueFilter = JsonValueNegativeFilter::class)
+    val classId: Long = -1,
 
     @TableField(exist = false)
     val userIdCard: UserIdCard? = null,

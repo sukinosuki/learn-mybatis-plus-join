@@ -30,6 +30,7 @@ dependencies {
 //    implementation("org.mybatis:mybatis-spring:3.0.3")
     implementation("com.baomidou:mybatis-plus-spring-boot3-starter:3.5.7")
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.1")
+    developmentOnly("org.springframework.boot:spring-boot-devtools:3.3.2")
     runtimeOnly("com.mysql:mysql-connector-j")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
